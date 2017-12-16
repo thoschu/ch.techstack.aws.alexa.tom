@@ -3,50 +3,48 @@
 const Alexa = require('alexa-sdk'),
     APP_ID = 'amzn1.ask.skill.013147ee-412a-4a59-8e58-1e9fe2376df5';
 
-/*
-const languageStrings = {
-    'en': {
-        translation: {
-            FACTS: [
-                'A year on Mercury is just 88 days long.',
-            ],
-            SKILL_NAME: 'Space Facts',
-            GET_FACT_MESSAGE: "Here's your fact: ",
-            HELP_MESSAGE: 'You can say tell me a space fact, or, you can say exit... What can I help you with?',
-            HELP_REPROMPT: 'What can I help you with?',
-            STOP_MESSAGE: 'Goodbye!',
-        },
-    },
-    'en-US': {
-        translation: {
-            FACTS: [
-                'A year on Mercury is just 88 days long.',
-            ],
-            SKILL_NAME: 'American Space Facts',
-        },
-    },
-    'en-GB': {
-        translation: {
-            FACTS: [
-                'A year on Mercury is just 88 days long.',
-            ],
-            SKILL_NAME: 'British Space Facts',
-        },
-    },
-    'de': {
-        translation: {
-            FACTS: [
-                'Ein Jahr dauert auf dem Merkur nur 88 Tage.',
-            ],
-            SKILL_NAME: 'Weltraumwissen auf Deutsch',
-            GET_FACT_MESSAGE: 'Hier sind deine Fakten: ',
-            HELP_MESSAGE: 'Du kannst sagen, „Nenne mir einen Fakt über den Weltraum“, oder du kannst „Beenden“ sagen... Wie kann ich dir helfen?',
-            HELP_REPROMPT: 'Wie kann ich dir helfen?',
-            STOP_MESSAGE: 'Auf Wiedersehen!',
-        },
-    },
-};
-*/
+// const languageStrings = {
+//     'en': {
+//         translation: {
+//             FACTS: [
+//                 'A year on Mercury is just 88 days long.',
+//             ],
+//             SKILL_NAME: 'Space Facts',
+//             GET_FACT_MESSAGE: "Here's your fact: ",
+//             HELP_MESSAGE: 'You can say tell me a space fact, or, you can say exit... What can I help you with?',
+//             HELP_REPROMPT: 'What can I help you with?',
+//             STOP_MESSAGE: 'Goodbye!',
+//         },
+//     },
+//     'en-US': {
+//         translation: {
+//             FACTS: [
+//                 'A year on Mercury is just 88 days long.',
+//             ],
+//             SKILL_NAME: 'American Space Facts',
+//         },
+//     },
+//     'en-GB': {
+//         translation: {
+//             FACTS: [
+//                 'A year on Mercury is just 88 days long.',
+//             ],
+//             SKILL_NAME: 'British Space Facts',
+//         },
+//     },
+//     'de': {
+//         translation: {
+//             FACTS: [
+//                 'Ein Jahr dauert auf dem Merkur nur 88 Tage.',
+//             ],
+//             SKILL_NAME: 'Weltraumwissen auf Deutsch',
+//             GET_FACT_MESSAGE: 'Hier sind deine Fakten: ',
+//             HELP_MESSAGE: 'Du kannst sagen, „Nenne mir einen Fakt über den Weltraum“, oder du kannst „Beenden“ sagen... Wie kann ich dir helfen?',
+//             HELP_REPROMPT: 'Wie kann ich dir helfen?',
+//             STOP_MESSAGE: 'Auf Wiedersehen!',
+//         },
+//     },
+// };
 
 let handlers = {
     'LaunchRequest': function () {
@@ -78,6 +76,9 @@ let handlers = {
     'AMAZON.StopIntent': function () {
         //this.emit(':tell', this.t('STOP_MESSAGE'));
         this.emit(':tell', 'Gestoppt.  Auf Wiedersehen!');
+    },
+    'HalloTomIntent': function () {
+        this.emit(':tell', 'Hallich bin Thomas Softwareentwickler aus Hamburg');
     },
 };
 
