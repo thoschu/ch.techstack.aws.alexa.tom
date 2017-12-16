@@ -12,6 +12,22 @@
       {
         "name": "AMAZON.StopIntent",
         "samples": []
+      },
+      {
+        "name": "HalloTomIntent",
+        "samples": [
+          "um {time}",
+          "mit {time}",
+          "mit Uhrzeit {time}",
+          "um Uhrzeit {time}",
+          "{time}"
+        ],
+        "slots": [
+          {
+            "name": "time",
+            "type": "AMAZON.TIME"
+          }
+        ]
       }
     ],
     "invocationName": "thomas"

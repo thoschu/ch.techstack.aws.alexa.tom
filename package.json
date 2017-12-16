@@ -1,0 +1,23 @@
+{
+  "name": "alexa-skill-kit-sdk-factskill",
+  "version": "1.0.0",
+  "description": "de.schulte360.aws.alexa.tom",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thoschu/de.schulte360.aws.alexa.tom.git"
+  },
+  "author": "Tom S.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thoschu/de.schulte360.aws.alexa.tom/issues"
+  },
+  "homepage": "https://github.com/thoschu/de.schulte360.aws.alexa.tom#readme",
+  "dependencies": {
+    "alexa-sdk": "^1.0.10"
+  }
+}
