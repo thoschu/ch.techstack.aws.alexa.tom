@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/thoschu/de.schulte360.aws.alexa.tom#readme",
   "dependencies": {
-    "alexa-sdk": "^1.0.10"
+    "alexa-sdk": "^1.0.10",
+    "ramda": "^0.25.0"
   }
 }
