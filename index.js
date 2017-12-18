@@ -136,37 +136,38 @@
 
 'use strict';
 
-const Alexa = require('alexa-sdk');
+const Alexa = require('alexa-sdk'),
+    R = require('ramda'),
+    Sugar = require('sugar');
 
-const APP_ID = 'xxxxxxxxxxxxxxxxxxxxxxxx';
-
-const languageStrings = {
-    'de': {
-        translation: {
-            FACTS: [],
-            SKILL_NAME: 'Tom´s Hello World Skill',
-            REQUEST_MESSAGE: 'Es ist jetzt %s. Was ist zu tun?',
-            HELP_MESSAGE: 'Momentan ist keine Hilfe implementiert.',
-            HELP_REPROMPT: 'Momentan ist keine Hilfe implementiert.',
-            STOP_MESSAGE: 'In Hamburg sagt man Tschüss!',
-            CANCEL_MESSAGE: 'Abgebrochen. Auf Wiedersehen!'
+const APP_ID = '',
+    languageStrings = {
+        'de': {
+            translation: {
+                FACTS: [],
+                SKILL_NAME: 'Tom´s Hello World Skill',
+                REQUEST_MESSAGE: 'Es ist jetzt %s. Was ist zu tun?',
+                HELP_MESSAGE: 'Momentan ist keine Hilfe implementiert. Heute ist der: ' + Sugar.Date.format(new Date(), '%d-%m-%Y'),
+                HELP_REPROMPT: 'Momentan ist keine Hilfe implementiert.',
+                STOP_MESSAGE: 'In Hamburg sagt man Tschüss!',
+                CANCEL_MESSAGE: 'Abgebrochen. Auf Wiedersehen!'
+            },
         },
-    },
-    'en': {
-        translation: {
-            FACTS: [
-                'A year on Mercury is just 88 days long.',
-                'Despite being farther from the Sun, Venus experiences higher temperatures than Mercury.'
-            ],
-            SKILL_NAME: 'Tom´s Hello World Skill',
-            REQUEST_MESSAGE: 'It is %s. What can i do?',
-            HELP_MESSAGE: 'No help.',
-            HELP_REPROMPT: 'No help.',
-            STOP_MESSAGE: 'Good bye',
-            CANCEL_MESSAGE: 'Cancel. Bye bye.'
+        'en': {
+            translation: {
+                FACTS: [
+                    'A year on Mercury is just 88 days long.',
+                    'Despite being farther from the Sun, Venus experiences higher temperatures than Mercury.'
+                ],
+                SKILL_NAME: 'Tom´s Hello World Skill',
+                REQUEST_MESSAGE: 'It is %s. What can i do?',
+                HELP_MESSAGE: 'No help.',
+                HELP_REPROMPT: 'No help.',
+                STOP_MESSAGE: 'Good bye',
+                CANCEL_MESSAGE: 'Cancel. Bye bye.'
+            },
         },
-    },
-};
+    };
 
 let currentTimeFromDate = function(date) {
     const hours = date.getHours();
@@ -218,7 +219,7 @@ let handlers = {
                 tempValue = this.event.request.intent.slots.time.value + '</say-as>';
             this.emit(':tell', txtStr1 + txtStr2 + tempText + tempValue + '. Es ist also demnach: ' + currentTimeFromDate(date));
         } else {
-            this.emit(':ask', txtStr1 + txtStr2 + ' Kommando?', 'Hallo, das Kommando bitte!');
+            this.emit(':ask', R.concat(txtStr1, txtStr2) + ' Kommando?', 'Hallo, das Kommando bitte!');
         }
     }
 };

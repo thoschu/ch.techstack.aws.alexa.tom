@@ -1,7 +1,7 @@
 {
-  "name": "alexa-skill-kit-sdk-factskill",
+  "name": "de.schulte360.aws.alexa.tom",
   "version": "1.0.0",
-  "description": "de.schulte360.aws.alexa.tom",
+  "description": "",
   "main": "index.js",
   "private": true,
   "scripts": {
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/thoschu/de.schulte360.aws.alexa.tom#readme",
   "dependencies": {
     "alexa-sdk": "^1.0.10",
-    "ramda": "^0.25.0"
+    "ramda": "^0.25.0",
+    "sugar": "^2.0.4"
   }
 }
