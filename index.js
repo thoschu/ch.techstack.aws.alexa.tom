@@ -140,7 +140,7 @@ const Alexa = require('alexa-sdk'),
     R = require('ramda'),
     Sugar = require('sugar');
 
-const APP_ID = '',
+const APP_ID = 'xxx',
     languageStrings = {
         'de': {
             translation: {
@@ -202,7 +202,18 @@ let handlers = {
         this.emit(':tell', this.t('HELP_MESSAGE'));
     },
     'AMAZON.CancelIntent': function() {
-        this.emit(':tell', this.t('CANCEL_MESSAGE'));
+        let that = this;
+
+        var request = require('request');
+
+        var url = 'https://requestb.in/rhkumqrh';
+        request(url, function (error, response, body) {
+            if (!error) {
+                that.emit(':tell', that.t('CANCEL_MESSAGE') + body);
+            } else {
+                that.emit(':tell', 'uuuups');
+            }
+        });
     },
     'AMAZON.StopIntent': function() {
         this.emit(':tell', this.t('STOP_MESSAGE'));
