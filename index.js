@@ -16,10 +16,13 @@ const APP_ID = 'xxx',
                 HELP_REPROMPT: 'Momentan ist keine Hilfe implementiert.',
                 STOP_MESSAGE: 'In Hamburg sagt man Tschüss!',
                 CANCEL_MESSAGE: [
-                    'Abgebrochen. Auf Wiedersehen!',
+                    'Auf Wiedersehen!',
                     'Bis zum nächsten Mal.',
-                    'Bitte sehr.',
-                    'Gerne wieder.'
+                    '<amazon:effect name="whispered">Gerne wieder.</amazon:effect>',
+                    '<amazon:effect name="whispered">I am not a real human.</amazon:effect>',
+                    '<say-as interpret-as="interjection">ade</say-as>',
+                    '<say-as interpret-as="interjection">bis bald</say-as>',
+                    '<say-as interpret-as="interjection">tschö</say-as>',
                 ]
             },
         },
@@ -79,10 +82,14 @@ let handlers = {
 
         Request(url, function (error, response, body) {
             if (!error) {
+                // https://ia802508.us.archive.org/5/items/testmp3testfile/mpthreetest.mp3
+                const audio = '<audio src="https://we-make-apps.com/alexa/thecrazyones.mp3" />';
+
                 let tmpIdx = Sugar.Number.random(0, that.t('CANCEL_MESSAGE').length - 1),
                     tmpTxt = R.nth(tmpIdx, that.t('CANCEL_MESSAGE'));
 
-                that.response.speak(tmpTxt + ' ' + body);
+                that.response.speak(audio);
+                //that.response.speak(tmpTxt + ' ' + body);
             } else {
                 that.response.speak('uuuups.');
             }
@@ -117,6 +124,7 @@ let handlers = {
 exports.handler = function (event, context) {
     const alexa = Alexa.handler(event, context);
     alexa.APP_ID = APP_ID;
+    alexa.out
     alexa.resources = languageStrings;
     alexa.registerHandlers(handlers);
     alexa.execute();
