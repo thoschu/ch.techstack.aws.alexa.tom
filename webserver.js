@@ -37,7 +37,7 @@ console.log('WebServer running...');
 //         console.log(err);
 //     });
 
-oxr.set({ app_id: '468ab15700f846789d275bf5bc1328bd' })
+oxr.set({ app_id: '' })
 
 oxr.latest(function() {
     // You can now use `oxr.rates`, `oxr.base` and `oxr.timestamp`
