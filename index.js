@@ -14,7 +14,7 @@ const APP_ID = 'xxx',
                 REQUEST_MESSAGE: 'Es ist jetzt %s. Was ist zu tun?',
                 HELP_MESSAGE: 'Momentan ist keine Hilfe implementiert. Heute ist der: ' + Sugar.Date.format(new Date(), '%d-%m-%Y'),
                 HELP_REPROMPT: 'Momentan ist keine Hilfe implementiert.',
-                STOP_MESSAGE: 'In Hamburg sagt man Tschüss!',
+                STOP_MESSAGE: 'In Hamburg sagt man <break time="2s"/> Tschüss!',
                 CANCEL_MESSAGE: [
                     'Auf Wiedersehen!',
                     'Bis zum nächsten Mal.',
@@ -126,7 +126,6 @@ let handlers = {
 exports.handler = function (event, context) {
     const alexa = Alexa.handler(event, context);
     alexa.APP_ID = APP_ID;
-    alexa.out
     alexa.resources = languageStrings;
     alexa.registerHandlers(handlers);
     alexa.execute();
