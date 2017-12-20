@@ -82,8 +82,10 @@ let handlers = {
 
         Request(url, function (error, response, body) {
             if (!error) {
-                // https://ia802508.us.archive.org/5/items/testmp3testfile/mpthreetest.mp3
-                const audio = '<audio src="https://we-make-apps.com/alexa/thecrazyones.mp3" />';
+                // https://we-make-apps.com/alexa/thecrazyones.mp3
+                // Max. length 90 sec
+                // feste Bit-Rate, 48 kBit/s, 1600 Hz. Audacity
+                const audio = '<audio src="https://carfu.com/audio/carfu-welcome.mp3" />';
 
                 let tmpIdx = Sugar.Number.random(0, that.t('CANCEL_MESSAGE').length - 1),
                     tmpTxt = R.nth(tmpIdx, that.t('CANCEL_MESSAGE'));
