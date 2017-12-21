@@ -103,6 +103,14 @@ let handlers = {
         this.emit(':tell', this.t('STOP_MESSAGE'));
     },
     'HelloWorldIntent': function () {
+        // this.attributes.test = "foobarbaz";
+        // var test;
+        // if(Object.keys(this.attributes).length === 0) {
+        //     test = "nope";
+        // } else {
+        //     test = this.attributes.test;
+        // }
+
         let txtStr1 = 'Moin, ich bin Thomas. ',
             txtStr2 = 'Softwareentwickler aus Hamburg.',
             hh = this.event.request.intent.slots.time.value.substr(0, 2),
