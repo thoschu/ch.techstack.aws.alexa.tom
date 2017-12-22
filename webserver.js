@@ -54,7 +54,7 @@ oxr.set({ app_id: '468ab15700f846789d275bf5bc1328bd' });
 oxr.latest(function() {
     // You can now use `oxr.rates`, `oxr.base` and `oxr.timestamp`
     // Apply exchange rates and base rate to `fx` library object:
-    //oxr.base = 'EUR';
+    // oxr.base = 'EUR';
 	console.info(oxr.rates);
     console.info('####');
 

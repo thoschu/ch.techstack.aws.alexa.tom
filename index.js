@@ -9,7 +9,7 @@ const APP_ID = 'xxx',
     languageStrings = {
         'de': {
             translation: {
-                FACTS: [],
+                INFOS: [],
                 SKILL_NAME: 'Tom´s Hello World Skill',
                 REQUEST_MESSAGE: 'Es ist jetzt %s. Was ist zu tun?',
                 HELP_MESSAGE: 'Momentan ist keine Hilfe implementiert. Heute ist der: ' + Sugar.Date.format(new Date(), '%d-%m-%Y'),
@@ -28,7 +28,7 @@ const APP_ID = 'xxx',
         },
         'en': {
             translation: {
-                FACTS: [
+                INFOS: [
                     'Foo Bar',
                     'baz'
                 ],
@@ -131,8 +131,8 @@ let handlers = {
     }
 };
 
-exports.handler = function (event, context) {
-    const alexa = Alexa.handler(event, context);
+exports.handler = function (event, context, callback) {
+    const alexa = Alexa.handler(event, context, callback);
     alexa.APP_ID = APP_ID;
     alexa.resources = languageStrings;
     alexa.registerHandlers(handlers);

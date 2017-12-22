@@ -30,6 +30,93 @@
         ]
       }
     ],
-    "invocationName": "thomas"
+    "invocationName": "hello tom"
   }
 }
+
+//{
+//  "languageModel": {
+//    "types": [
+//      {
+//        "name": "currencies",
+//        "values": [
+//          {
+//            "id": "USD",
+//            "name": {
+//              "value": "dollar",
+//              "synonyms": [
+//                "usd"
+//              ]
+//            }
+//          },
+//          {
+//            "id": "EUR",
+//            "name": {
+//              "value": "euro",
+//              "synonyms": [
+//                "eur"
+//              ]
+//            }
+//          },
+//          {
+//            "id": "CHF",
+//            "name": {
+//              "value": "franken",
+//              "synonyms": [
+//                "chf"
+//              ]
+//            }
+//          }
+//        ]
+//      }
+//    ],
+//    "intents": [
+//      {
+//        "name": "AMAZON.CancelIntent",
+//        "samples": []
+//      },
+//      {
+//        "name": "AMAZON.HelpIntent",
+//        "samples": []
+//      },
+//      {
+//        "name": "AMAZON.NoIntent",
+//        "samples": []
+//      },
+//      {
+//        "name": "AMAZON.StopIntent",
+//        "samples": []
+//      },
+//      {
+//        "name": "AMAZON.YesIntent",
+//        "samples": []
+//      },
+//      {
+//        "name": "RaiffeisenbankKurseIntent",
+//        "samples": [
+//          "nach {currency}",
+//          "mit {currency}"
+//        ],
+//        "slots": [
+//          {
+//            "name": "currency",
+//            "type": "currencies"
+//          }
+//        ]
+//      },
+//      {
+//        "name": "RepeatIntent",
+//        "samples": [
+//          "wie bitte",
+//          "nochmal",
+//          "bitte nochmal",
+//          "wiederholen",
+//          "bitte wiederholen",
+//          "was"
+//        ],
+//        "slots": []
+//      }
+//    ],
+//    "invocationName": "raiffeisen bank"
+//  }
+//}
