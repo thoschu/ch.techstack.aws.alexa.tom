@@ -4,6 +4,10 @@ var rp = require('request-promise');
 var oxr = require('open-exchange-rates');
 var fx = require('money');
 var util = require('util');
+var fs = require('fs');
+var R = require('ramda');
+var events = require('events');
+
 
 // var a = 5;
 // var b = 10;
@@ -49,22 +53,46 @@ var util = require('util');
 //         console.error(err);
 //     });
 
-oxr.set({ app_id: '468ab15700f846789d275bf5bc1328bd' });
+var emitter = new events.EventEmitter();
 
-oxr.latest(function() {
-    // You can now use `oxr.rates`, `oxr.base` and `oxr.timestamp`
-    // Apply exchange rates and base rate to `fx` library object:
-    // oxr.base = 'EUR';
-	console.info(oxr.rates);
-    console.info('####');
+fs.readFile('info.txt', function (err, data) {
 
-    console.info(oxr.base);
+    if(R.isNil(err)) {
+        emitter.emit('rate', data.toString());
+    }
 
-    fx.rates = oxr.rates;
-    fx.base = oxr.base;
+});
 
-    // money.js is ready to use:
-    let res = fx(1).from('EUR').to('CHF');
+var cb = function (param) {
+    util.log('ONCE ' + param);
+};
 
-    console.info(res);
+emitter.once('rate', cb);
+
+emitter.on('rate', function (param) {
+
+    oxr.set({ app_id: param });
+
+    oxr.latest(function() {
+        // You can now use `oxr.rates`, `oxr.base` and `oxr.timestamp`
+        // Apply exchange rates and base rate to `fx` library object:
+        // oxr.base = 'EUR';
+        console.info(oxr.rates);
+        console.info('####');
+
+        console.info(oxr.base);
+
+        fx.rates = oxr.rates;
+        fx.base = oxr.base;
+
+        // money.js is ready to use:
+        let res = fx(1).from('EUR').to('CHF');
+
+        var output = util.format('Das Ergebnis lautet %s ', res);
+        util.log(output);
+
+        //util.log(util.inspect(process));
+        //util.inspect('util')
+        process.kill(process.pid, 'SIGKILL');
+    });
 });
