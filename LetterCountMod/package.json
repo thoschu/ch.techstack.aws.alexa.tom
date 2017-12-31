@@ -1,0 +1,4 @@
+{
+  "name": "LetterCount",
+  "main": "./lib/letterCount.js"
+}

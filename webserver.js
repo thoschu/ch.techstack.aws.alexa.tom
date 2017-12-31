@@ -65,6 +65,7 @@ fs.readFile('info.txt', function (err, data) {
 
 var cb = function (param) {
     util.log('ONCE ' + param);
+    util.log(emitter.listeners('rate'));
 };
 
 emitter.once('rate', cb);
@@ -77,10 +78,9 @@ emitter.on('rate', function (param) {
         // You can now use `oxr.rates`, `oxr.base` and `oxr.timestamp`
         // Apply exchange rates and base rate to `fx` library object:
         // oxr.base = 'EUR';
-        console.info(oxr.rates);
-        console.info('####');
-
-        console.info(oxr.base);
+        // console.info(oxr.rates);
+        // console.info('####');
+        // console.info(oxr.base);
 
         fx.rates = oxr.rates;
         fx.base = oxr.base;
@@ -91,8 +91,17 @@ emitter.on('rate', function (param) {
         var output = util.format('Das Ergebnis lautet %s ', res);
         util.log(output);
 
-        //util.log(util.inspect(process));
-        //util.inspect('util')
+        var lc = require('./LetterCountMod');
+        var calc = require('./calc');
+
+        util.log(lc.letterCount(' Tom S. aka magixonline'));
+        util.log(calc.add(3, 10));
+
+        //console.log(module.children);
+
         process.kill(process.pid, 'SIGKILL');
     });
+
+    emitter.removeListener('rate', cb)
+
 });
