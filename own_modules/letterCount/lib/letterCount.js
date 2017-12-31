@@ -1,9 +1,9 @@
-const R = require('ramda');
+const Util = require('util'),
+    R = require('ramda');
 
-var letterCount = function (sentence) {
-    console.log(require.main.filename);
-    console.log(module.parent.filename);
+Util.log(Util.format('Module: %s loaded.', module.id));
 
+let letterCount = function (sentence) {
     let trimmed = R.trim(sentence),
         replaced = R.replace(/\s/g, '', trimmed);
 

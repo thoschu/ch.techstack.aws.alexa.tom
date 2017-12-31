@@ -88,16 +88,25 @@ emitter.on('rate', function (param) {
         // money.js is ready to use:
         let res = fx(1).from('EUR').to('CHF');
 
-        var output = util.format('Das Ergebnis lautet %s ', res);
+        var word = 'Ergebis';
+
+        var output = util.format(`Das ${word} lautet %s `, res);
         util.log(output);
 
-        var lc = require('./LetterCountMod');
+        var lc1 = require('./own_modules/letterCount');
         var calc = require('./calc');
 
-        util.log(lc.letterCount(' Tom S. aka magixonline'));
-        util.log(calc.add(3, 10));
+        util.log(lc1.letterCount(' Tom S.  '));
+        util.log(require('./own_modules/letterCount').letterCount('Hamburg Bielefeld'));
+
+        util.log(calc.add(1, 6));
+
+        util.log(require.resolve('./own_modules/letterCount'));
+        util.log(require.extensions['.js']);
 
         //console.log(module.children);
+        //console.log(require.main.filename);
+        //console.log(module.parent.filename);
 
         process.kill(process.pid, 'SIGKILL');
     });
