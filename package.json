@@ -2,6 +2,7 @@
   "name": "de.schulte360.aws.alexa.tom",
   "version": "1.0.0",
   "description": "",
+  "keywords": "",
   "main": "index.js",
   "private": true,
   "scripts": {
@@ -11,14 +12,19 @@
     "type": "git",
     "url": "git+https://github.com/thoschu/de.schulte360.aws.alexa.tom.git"
   },
-  "author": "Tom S.",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/thoschu/de.schulte360.aws.alexa.tom/issues"
+  "author": {
+    "name": "Tom S.",
+    "email": "thoschulte@gmail.com"
   },
-  "homepage": "https://github.com/thoschu/de.schulte360.aws.alexa.tom#readme",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
   "dependencies": {
     "alexa-sdk": "^1.0.10",
+    "buddy.js": "^0.9.3",
+    "letter-count": "^1.1.2",
     "money": "^0.2.0",
     "open-exchange-rates": "^0.3.0",
     "ramda": "^0.25.0",
@@ -26,5 +32,11 @@
     "request-promise": "^4.2.2",
     "sugar": "^2.0.4",
     "vertx3-full": "^3.5.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  },
+  "engines": {
+    "node": "7.6.0"
   }
 }

@@ -93,15 +93,13 @@ emitter.on('rate', function (param) {
         var output = util.format(`Das ${word} lautet %s `, res);
         util.log(output);
 
-        var lc1 = require('./own_modules/letterCount');
+        var lc = require('letter-count');
         var calc = require('./calc');
 
-        util.log(lc1.letterCount(' Tom S.  '));
-        util.log(require('./own_modules/letterCount').letterCount('Hamburg Bielefeld'));
+        util.log(lc.letterCount('Tom S.'));
 
         util.log(calc.add(1, 6));
 
-        util.log(require.resolve('./own_modules/letterCount'));
         util.log(require.extensions['.js']);
 
         //console.log(module.children);
