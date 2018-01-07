@@ -110,5 +110,4 @@ emitter.on('rate', function (param) {
     });
 
     emitter.removeListener('rate', cb)
-
 });
