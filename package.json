@@ -6,7 +6,9 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -31,12 +33,14 @@
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
     "sugar": "^2.0.4",
-    "vertx3-full": "^3.5.0"
+    "vertx3-full": "^3.5.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "grunt": "^1.0.1"
   },
   "engines": {
     "node": "7.6.0"
-  }
+  },
+  "snyk": true
 }
