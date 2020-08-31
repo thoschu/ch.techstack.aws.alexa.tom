@@ -1,4 +1,4 @@
-# de.schulte360.aws.alexa.tom
+# ch.techstack.aws.alexa.tom
 
 https://aws.amazon.com/de/
 
