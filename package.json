@@ -24,10 +24,10 @@
   "dependencies": {
     "alexa-sdk": "^1.0.10",
     "buddy.js": "^0.9.3",
-    "letter-count": "^1.1.2",
+    "letter-count": "^3.0.0",
     "money": "^0.2.0",
     "open-exchange-rates": "^0.3.0",
-    "ramda": "^0.25.0",
+    "ramda": "^0.27.2",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
     "sugar": "^2.0.4",
